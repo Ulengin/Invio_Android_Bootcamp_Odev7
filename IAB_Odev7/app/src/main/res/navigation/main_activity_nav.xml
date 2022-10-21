@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_activity"
+    app:startDestination="@id/anasayfaFragment">
+
+    <fragment
+        android:id="@+id/anasayfaFragment"
+        android:name="com.example.iab_odev7.ui.fragment.AnasayfaFragment"
+        android:label="fragment_anasayfa"
+        tools:layout="@layout/fragment_anasayfa" >
+        <action
+            android:id="@+id/isKayitGecis"
+            app:destination="@id/yiskayitFragment" />
+        <action
+            android:id="@+id/isDetayGecis"
+            app:destination="@id/yisdetayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/yiskayitFragment"
+        android:name="com.example.iab_odev7.ui.fragment.KayitFragment"
+        android:label="fragment_yiskayit"
+        tools:layout="@layout/fragment_kayit" />
+    <fragment
+        android:id="@+id/yisdetayFragment"
+        android:name="com.example.iab_odev7.ui.fragment.DetayFragment"
+        android:label="fragment_yisdetay"
+        tools:layout="@layout/fragment_detay" >
+        <argument
+            android:name="work"
+            app:argType="com.example.iab_odev7.data.entity.Isler" />
+    </fragment>
+</navigation>
